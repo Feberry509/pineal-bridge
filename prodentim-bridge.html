@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Surprising Reason Your Teeth Stay Weak (Even If You Brush Daily)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --deep: #1A1A2E;
+    --mint: #2ECC9A;
+    --mint-dark: #22A87E;
+    --warm: #F4A261;
+    --text: #2D2D2D;
+    --muted: #6B6B6B;
+    --white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--deep);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .topbar span { color: var(--mint); font-weight: 600; }
+
+  /* HERO */
+  .hero {
+    background: var(--white);
+    padding: 48px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid #E8E3DA;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    background: #E8F8F2;
+    color: var(--mint-dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--deep);
+    max-width: 680px;
+    margin: 0 auto 20px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--mint-dark);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  /* PRODUCT VISUAL */
+  .product-visual {
+    background: linear-gradient(135deg, #E8F8F2 0%, #F0FAF6 100%);
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 340px;
+    margin: 0 auto 32px;
+    border: 1px solid #C8EFE1;
+  }
+
+  .product-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+
+  .product-tag {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--deep);
+  }
+
+  .stars { color: #F4A261; font-size: 16px; }
+
+  /* CTA PRIMARY */
+  .cta-primary {
+    display: block;
+    background: var(--mint);
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    padding: 18px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    max-width: 420px;
+    margin: 0 auto;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.01em;
+  }
+
+  .cta-primary:hover { background: var(--mint-dark); transform: translateY(-1px); }
+  .cta-primary:active { transform: translateY(0); }
+
+  .cta-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  /* PROBLEM SECTION */
+  .section {
+    padding: 48px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .problem-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .highlight-box {
+    background: #FFF8F0;
+    border-left: 4px solid var(--warm);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 24px 0;
+  }
+
+  /* BENEFITS */
+  .benefits-section {
+    background: var(--white);
+    padding: 48px 24px;
+    border-top: 1px solid #E8E3DA;
+    border-bottom: 1px solid #E8E3DA;
+  }
+
+  .benefits-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: 540px) {
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .benefit-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E8E3DA;
+  }
+
+  .benefit-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .benefit-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--deep);
+    margin-bottom: 6px;
+  }
+
+  .benefit-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-section {
+    padding: 48px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid #E8E3DA;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--mint);
+    opacity: 0.3;
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    padding-top: 20px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--deep);
+    padding: 56px 24px;
+    text-align: center;
+  }
+
+  .final-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .final-cta h2 em {
+    font-style: normal;
+    color: var(--mint);
+  }
+
+  .final-cta p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-final-btn {
+    display: inline-block;
+    background: var(--mint);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .cta-final-btn:hover { background: var(--mint-dark); }
+
+  .guarantee {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: #E8E3DA;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  ⚡ New discovery: <span>3.5 billion probiotic strains</span> may transform your oral health
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Dental Health Breakthrough</div>
+  <h1>Why Most People's Teeth Get Worse — Even When They <em>Brush Twice a Day</em></h1>
+  <p class="hero-sub">Scientists discovered the real reason behind weak teeth and bad breath — and it has nothing to do with your toothbrush.</p>
+
+  <div class="product-visual">
+    <span class="product-icon">🦷</span>
+    <div class="product-name">ProDentim</div>
+    <div class="product-tag">Advanced Oral Probiotic Formula</div>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span>4.9 / 5 — 95,000+ reviews</span>
+    </div>
+  </div>
+
+  <a href="https://e06d8du6ok5p7yac6dfcxrtbdl.hop.clickbank.net/?&traffic_source=pinterest&traffic_type=paid&campaign=prodentim-pinterest" class="cta-primary">
+    👉 See How ProDentim Works
+  </a>
+  <p class="cta-note">No subscription required · 60-day money back guarantee</p>
+</section>
+
+<!-- PROBLEM -->
+<section class="section">
+  <h2 class="section-title">The Problem Nobody Talks About</h2>
+  <p class="problem-text">You brush, you floss, you use mouthwash — yet your dentist still finds problems at every visit. Sound familiar?</p>
+  <p class="problem-text">Recent research from leading dental scientists reveals a shocking truth: <strong>most dental products are actually destroying the good bacteria your mouth needs to stay healthy.</strong></p>
+
+  <div class="highlight-box">
+    💡 <strong>The real culprit?</strong> An imbalance of bacteria in your oral microbiome. Without the right probiotic strains, harmful bacteria multiply — causing yellowing, sensitivity, bad breath, and gum issues no matter how much you brush.
+  </div>
+
+  <p class="problem-text">ProDentim was developed to fix exactly this — with a unique blend of <strong>3.5 billion probiotic strains and nutrients</strong> clinically shown to repopulate your mouth with the good bacteria it needs.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="benefits-inner">
+    <h2 class="section-title">What People Are Experiencing With ProDentim</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">✨</span>
+        <div class="benefit-title">Whiter, Brighter Teeth</div>
+        <div class="benefit-desc">Natural whitening without harsh chemicals or expensive treatments.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💨</span>
+        <div class="benefit-title">Fresh Breath All Day</div>
+        <div class="benefit-desc">Eliminates bad breath at the source — not just masking it temporarily.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🛡️</span>
+        <div class="benefit-title">Stronger Gums</div>
+        <div class="benefit-desc">Supports healthy gum tissue and reduces sensitivity over time.</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🦠</span>
+        <div class="benefit-title">3.5B Probiotic Strains</div>
+        <div class="benefit-desc">Clinically studied formula that restores your oral microbiome balance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <h2 class="section-title">Real People, Real Results</h2>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">I've been using ProDentim for 3 months and my last dentist appointment was the best I've had in years. My gums stopped bleeding and my teeth look noticeably whiter.</p>
+    <div class="testimonial-author">— Margaret T., 54 · Florida</div>
+  </div>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">I was skeptical at first, but after 6 weeks my wife noticed my breath was completely different. I feel more confident smiling again.</p>
+    <div class="testimonial-author">— James R., 47 · Texas</div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Ready to Transform Your <em>Oral Health?</em></h2>
+  <p>Join over 95,000 people who discovered what their dentist never told them — and see the difference in just weeks.</p>
+  <a href="https://e06d8du6ok5p7yac6dfcxrtbdl.hop.clickbank.net/?&traffic_source=pinterest&traffic_type=paid&campaign=prodentim-pinterest" class="cta-final-btn">
+    🦷 Discover ProDentim Now →
+  </a>
+  <p class="guarantee">✅ 60-Day Money Back Guarantee · No Risk</p>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  This page contains affiliate links. We may earn a commission if you purchase through our link, at no extra cost to you.<br>
+  Results may vary. These statements have not been evaluated by the Food and Drug Administration.<br>
+  This product is not intended to diagnose, treat, cure, or prevent any disease.
+</div>
+
+</body>
+</html>
